@@ -10,6 +10,7 @@ https://github.com/user-attachments/assets/1ee4a782-afbc-4f08-845f-88c6b3453b9b
 5. **Restore the NuGet packages**, by **right-clicking the Launcher project > Manage NuGet Packages > Restore button**;
 6. Change the configs to your liking, in the **Config.cpp** file;
 <img width="1183" height="286" alt="1756962394166- RaGEZONE" src="https://github.com/user-attachments/assets/e936f4fb-df9f-4382-99b2-215208929bbe" />
+
 7. **Build** the solution, the .exe will be inside the **Output folder**;
 <img width="720" height="192" alt="1756962433454- RaGEZONE" src="https://github.com/user-attachments/assets/4fedc2a6-a4f4-4cfa-92b2-6e54a335fe89" />
 
