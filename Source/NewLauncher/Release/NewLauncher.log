@@ -1,0 +1,28 @@
+﻿  imgui_impl_dx9.cpp
+  imgui_impl_win32.cpp
+  imgui.cpp
+  imgui_draw.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  gui.cpp
+e:\grand chase\sources\ernas reborn client & server\newlauncher\gui.cpp(106): warning C4244: 'argumento': conversão de 'const float' para 'int', possível perda de dados
+  main.cpp
+  Gerando código
+  All 1731 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finalizada a geração de código
+mimalloc.lib(alloc-aligned.obj) : warning LNK4099: PDB 'mimalloc-lib.pdb' não foi encontrado 'mimalloc.lib(alloc-aligned.obj)' ou no 'E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\mimalloc-lib.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+mimalloc.lib(alloc.obj) : warning LNK4099: PDB 'mimalloc-lib.pdb' não foi encontrado 'mimalloc.lib(alloc.obj)' ou no 'E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\mimalloc-lib.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+mimalloc.lib(arena.obj) : warning LNK4099: PDB 'mimalloc-lib.pdb' não foi encontrado 'mimalloc.lib(arena.obj)' ou no 'E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\mimalloc-lib.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+mimalloc.lib(bitmap.obj) : warning LNK4099: PDB 'mimalloc-lib.pdb' não foi encontrado 'mimalloc.lib(bitmap.obj)' ou no 'E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\mimalloc-lib.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+mimalloc.lib(heap.obj) : warning LNK4099: PDB 'mimalloc-lib.pdb' não foi encontrado 'mimalloc.lib(heap.obj)' ou no 'E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\mimalloc-lib.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+mimalloc.lib(init.obj) : warning LNK4099: PDB 'mimalloc-lib.pdb' não foi encontrado 'mimalloc.lib(init.obj)' ou no 'E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\mimalloc-lib.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+mimalloc.lib(libc.obj) : warning LNK4099: PDB 'mimalloc-lib.pdb' não foi encontrado 'mimalloc.lib(libc.obj)' ou no 'E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\mimalloc-lib.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+mimalloc.lib(prim.obj) : warning LNK4099: PDB 'mimalloc-lib.pdb' não foi encontrado 'mimalloc.lib(prim.obj)' ou no 'E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\mimalloc-lib.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+mimalloc.lib(options.obj) : warning LNK4099: PDB 'mimalloc-lib.pdb' não foi encontrado 'mimalloc.lib(options.obj)' ou no 'E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\mimalloc-lib.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+mimalloc.lib(page.obj) : warning LNK4099: PDB 'mimalloc-lib.pdb' não foi encontrado 'mimalloc.lib(page.obj)' ou no 'E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\mimalloc-lib.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+mimalloc.lib(random.obj) : warning LNK4099: PDB 'mimalloc-lib.pdb' não foi encontrado 'mimalloc.lib(random.obj)' ou no 'E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\mimalloc-lib.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+mimalloc.lib(segment-map.obj) : warning LNK4099: PDB 'mimalloc-lib.pdb' não foi encontrado 'mimalloc.lib(segment-map.obj)' ou no 'E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\mimalloc-lib.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+mimalloc.lib(segment.obj) : warning LNK4099: PDB 'mimalloc-lib.pdb' não foi encontrado 'mimalloc.lib(segment.obj)' ou no 'E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\mimalloc-lib.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+mimalloc.lib(os.obj) : warning LNK4099: PDB 'mimalloc-lib.pdb' não foi encontrado 'mimalloc.lib(os.obj)' ou no 'E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\mimalloc-lib.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+mimalloc.lib(stats.obj) : warning LNK4099: PDB 'mimalloc-lib.pdb' não foi encontrado 'mimalloc.lib(stats.obj)' ou no 'E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\mimalloc-lib.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+  NewLauncher.vcxproj -> E:\Grand Chase\Sources\Ernas Reborn Client & Server\Release\NewLauncher.exe
