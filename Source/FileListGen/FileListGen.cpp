@@ -9,7 +9,7 @@
 #include "json.hpp"
 #include "resource.h"
 #include <future>
-#include <semaphore> // C++20
+#include <semaphore>
 
 using json = nlohmann::json;
 
@@ -83,8 +83,9 @@ void gerarFileListJSON(const std::string& pastaRaiz) noexcept
         std::string caminhoCompleto = pastaRaiz + "\\" + relPath;
         if (caminhoCompleto == launcherName)
             continue;
-        futuros.emplace_back(std::async(std::launch::async, [caminhoCompleto, &sem]() {
+        futuros.emplace_back(std::async(std::launch::async, [caminhoCompleto, relPath, &sem]() {
             auto md5 = createMD5FromFile(caminhoCompleto);
+            std::cout << relPath << " - " << md5 << std::endl;
             sem.release();
             return md5;
         }));
@@ -97,7 +98,6 @@ void gerarFileListJSON(const std::string& pastaRaiz) noexcept
     for (size_t i = 0; i < caminhosRelativos.size(); ++i)
     {
         std::string md5 = futuros[i].get();
-        std::cout << caminhosRelativos[i] << " - " << md5 << "\n";
         arquivos.emplace_back(Arquivo{
             fileID++,
             md5,
