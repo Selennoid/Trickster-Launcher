@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Config.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|solutionrelative:Source\\NewLauncher\\Config.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Gui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|solutionrelative:Source\\NewLauncher\\Gui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Helper.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|solutionrelative:Source\\NewLauncher\\Helper.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|solutionrelative:Source\\NewLauncher\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Config.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|solutionrelative:Source\\NewLauncher\\Config.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,12 +31,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Gui.cpp",
+              "DocumentMoniker": "C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Gui.cpp",
+              "RelativeDocumentMoniker": "Source\\NewLauncher\\Gui.cpp",
+              "ToolTip": "C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Gui.cpp",
+              "RelativeToolTip": "Source\\NewLauncher\\Gui.cpp",
+              "ViewState": "AgIAABgCAAAAAAAAAAAAACICAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-15T04:37:50.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Main.cpp",
+              "DocumentMoniker": "C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Main.cpp",
+              "RelativeDocumentMoniker": "Source\\NewLauncher\\Main.cpp",
+              "ToolTip": "C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Main.cpp",
+              "RelativeToolTip": "Source\\NewLauncher\\Main.cpp",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAADwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-09-15T04:29:50.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Config.cpp",
               "DocumentMoniker": "C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Config.cpp",
               "RelativeDocumentMoniker": "Source\\NewLauncher\\Config.cpp",
               "ToolTip": "C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Config.cpp",
               "RelativeToolTip": "Source\\NewLauncher\\Config.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-15T04:00:14.923Z",
               "EditorCaption": ""
@@ -40,25 +70,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Gui.cpp",
-              "DocumentMoniker": "C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Gui.cpp",
-              "RelativeDocumentMoniker": "Source\\NewLauncher\\Gui.cpp",
-              "ToolTip": "C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Gui.cpp",
-              "RelativeToolTip": "Source\\NewLauncher\\Gui.cpp",
-              "ViewState": "AgIAABcCAAAAAAAAAAAkwCkCAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-09-07T02:22:55.597Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Helper.cpp",
               "DocumentMoniker": "C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Helper.cpp",
               "RelativeDocumentMoniker": "Source\\NewLauncher\\Helper.cpp",
               "ToolTip": "C:\\Users\\BCG\\Documents\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Helper.cpp",
               "RelativeToolTip": "Source\\NewLauncher\\Helper.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAB0BAAAAAAAAAAAAAA0BAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-09-07T02:04:07.03Z",
               "EditorCaption": ""

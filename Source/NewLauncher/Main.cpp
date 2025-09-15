@@ -14,10 +14,51 @@
 #include <comdef.h>
 #include <filesystem>
 
+bool RequiresAdmin(const std::wstring& folderPath) 
+{
+    std::wstring testFile = folderPath + L"\\perm_test.tmp";
+    HANDLE hFile = CreateFileW(testFile.c_str(), GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_TEMPORARY | FILE_FLAG_DELETE_ON_CLOSE, NULL);
+    if (hFile == INVALID_HANDLE_VALUE) 
+    {
+        DWORD err = GetLastError();
+        if (err == ERROR_ACCESS_DENIED)
+            return true;
+        return false;
+    }
+    CloseHandle(hFile);
+    DeleteFileW(testFile.c_str());
+    return false;
+}
+
+void RelaunchAsAdmin(const std::wstring& exePath) 
+{
+    SHELLEXECUTEINFOW sei = { sizeof(sei) };
+    sei.lpVerb = L"runas";
+    sei.lpFile = exePath.c_str();
+    sei.hwnd = NULL;
+    sei.nShow = SW_SHOWNORMAL;
+    if (!ShellExecuteExW(&sei)) 
+    {
+        DWORD err = GetLastError();
+        if (err == ERROR_CANCELLED)
+            MessageBoxW(NULL, L"Administrator access is necessary!", L"Warning!", MB_ICONWARNING);
+    }
+}
+
 int __stdcall wWinMain(HINSTANCE instance, HINSTANCE previousInstance, PWSTR arguments, int commandShow)
 {
     char exePath[MAX_PATH];
+    wchar_t exePathW[MAX_PATH];
     GetModuleFileNameA(nullptr, exePath, MAX_PATH);
+    GetModuleFileNameW(NULL, exePathW, MAX_PATH);
+    wchar_t folderPath[MAX_PATH];
+    wcscpy_s(folderPath, exePathW);
+    PathRemoveFileSpecW(folderPath);
+    if (RequiresAdmin(folderPath)) 
+    {
+        RelaunchAsAdmin(exePathW);
+        return 0;
+    }
     std::filesystem::path currentExe(exePath);
     std::string extension = currentExe.extension().string();
     std::transform(extension.begin(), extension.end(), extension.begin(), [](unsigned char c) { return std::tolower(c); });
