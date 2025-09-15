@@ -28,9 +28,9 @@ int __stdcall wWinMain(HINSTANCE instance, HINSTANCE previousInstance, PWSTR arg
     if (FAILED(hr)) return -1;
     gui::CreateHWindow(config::WindowTitle.c_str());
     gui::CreateDevice();
-    gui::InitWebView(gui::window);
     gui::CreateImGui();
     gui::LoadResources();
+    gui::InitWebView(gui::window);
     MSG msg = {};
     bool firstFrame = true;
     while (gui::isRunning)

@@ -101,8 +101,12 @@ long __stdcall WindowProcess( HWND window, UINT message, WPARAM wideParameter, L
 
 void gui::InitWebView(HWND hWndParent)
 {
+	wchar_t tempPath[MAX_PATH];
+	GetTempPathW(MAX_PATH, tempPath);
+	std::wstring cacheFolder = std::wstring(tempPath) + L"WebView2Cache";
+	CreateDirectoryW(cacheFolder.c_str(), nullptr);
 	CreateCoreWebView2EnvironmentWithOptions(
-		nullptr, nullptr, nullptr,
+		nullptr, cacheFolder.c_str(), nullptr,
 		Microsoft::WRL::Callback<ICoreWebView2CreateCoreWebView2EnvironmentCompletedHandler>(
 			[hWndParent](HRESULT result, ICoreWebView2Environment* env) -> HRESULT
 			{
