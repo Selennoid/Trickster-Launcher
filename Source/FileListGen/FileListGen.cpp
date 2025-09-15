@@ -66,7 +66,7 @@ void listarArquivosRecursivo(const std::string& basePath, const std::string& sub
 
 void gerarFileListJSON(const std::string& pastaRaiz) noexcept
 {
-	std::string launcherName = "Splash.exe";
+	std::string launcherName = "Splash.";
     std::transform(launcherName.begin(), launcherName.end(), launcherName.begin(), [](unsigned char c) { return std::tolower(c); });
     constexpr int maxThreads = 8;
     std::counting_semaphore<maxThreads> sem(maxThreads);
@@ -81,7 +81,7 @@ void gerarFileListJSON(const std::string& pastaRaiz) noexcept
     {
         sem.acquire();
         std::string caminhoCompleto = pastaRaiz + "\\" + relPath;
-        if (caminhoCompleto == launcherName)
+        if (caminhoCompleto.find(launcherName))
             continue;
         futuros.emplace_back(std::async(std::launch::async, [caminhoCompleto, relPath, &sem]() {
             auto md5 = createMD5FromFile(caminhoCompleto);
