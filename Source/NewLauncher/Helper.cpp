@@ -259,37 +259,52 @@ void Helper::WorkerUpdating(int updateCount)
 
 bool Helper::InjectDLL(HANDLE hProcess, const std::string& dllPath)
 {
-    void* allocMem = VirtualAllocEx(hProcess, nullptr, dllPath.size() + 1, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
-    if (!allocMem)
+    LPVOID pRemote = VirtualAllocEx(hProcess, nullptr, strlen(dllPath.c_str()) + 1, MEM_COMMIT, PAGE_READWRITE);
+    if (!pRemote) 
         return false;
-    WriteProcessMemory(hProcess, allocMem, dllPath.c_str(), dllPath.size() + 1, nullptr);
-    HMODULE hKernel32 = GetModuleHandleA("kernel32.dll");
-    FARPROC loadLibAddr = GetProcAddress(hKernel32, "LoadLibraryA");
-    HANDLE hThread = CreateRemoteThread(hProcess, nullptr, 0, (LPTHREAD_START_ROUTINE)loadLibAddr, allocMem, 0, nullptr);
+    if (!WriteProcessMemory(hProcess, pRemote, dllPath.c_str(), strlen(dllPath.c_str()) + 1, nullptr))
+    {
+        VirtualFreeEx(hProcess, pRemote, 0, MEM_RELEASE);
+        return false;
+    }
+    HANDLE hThread = CreateRemoteThread(hProcess, nullptr, 0, (LPTHREAD_START_ROUTINE)LoadLibraryA, pRemote, 0, nullptr);
     if (!hThread)
+    {
+        VirtualFreeEx(hProcess, pRemote, 0, MEM_RELEASE);
         return false;
+    }
     WaitForSingleObject(hThread, INFINITE);
     CloseHandle(hThread);
-    VirtualFreeEx(hProcess, allocMem, 0, MEM_RELEASE);
+    VirtualFreeEx(hProcess, pRemote, 0, MEM_RELEASE);
     return true;
+}
+
+std::string Helper::GetGameExePath()
+{
+    char buffer[MAX_PATH];
+    GetModuleFileNameA(nullptr, buffer, MAX_PATH);
+    std::filesystem::path exePath(buffer);
+    std::filesystem::path dir = exePath.parent_path();
+    std::filesystem::path gameExe = dir / "Trickster.exe";
+    return gameExe.string();
 }
 
 void Helper::ClickPlayButton()
 {
     STARTUPINFOA si = { sizeof(si) };
     PROCESS_INFORMATION pi;
-    std::string commandLine = "Trickster.exe";
-    if (!CreateProcessA(nullptr, &commandLine[0], nullptr, nullptr, FALSE, CREATE_SUSPENDED, nullptr, nullptr, &si, &pi))
+    std::string exePath = GetGameExePath();
+    if (!CreateProcessA(exePath.c_str(), nullptr, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
         return;
     if (config::IsDllInjectEnable)
     {
+        Sleep(2000);
         if (!InjectDLL(pi.hProcess, config::InjectDLLName.c_str()))
         {
             TerminateProcess(pi.hProcess, 0);
             return;
         }
     }
-    ResumeThread(pi.hThread);
     CloseHandle(pi.hThread);
     CloseHandle(pi.hProcess);
     ExitProcess(0);
