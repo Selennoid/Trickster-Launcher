@@ -66,46 +66,45 @@ void listarArquivosRecursivo(const std::string& basePath, const std::string& sub
 
 void gerarFileListJSON(const std::string& pastaRaiz) noexcept
 {
-	std::string launcherName = "Splash.";
-    std::transform(launcherName.begin(), launcherName.end(), launcherName.begin(), [](unsigned char c) { return std::tolower(c); });
+    std::string launcherName = "splash.";
     constexpr int maxThreads = 8;
     std::counting_semaphore<maxThreads> sem(maxThreads);
-
     std::vector<std::string> caminhosRelativos;
     listarArquivosRecursivo(pastaRaiz, "", caminhosRelativos);
-
     std::vector<std::future<std::string>> futuros;
+    std::vector<std::string> caminhosValidos;
     futuros.reserve(caminhosRelativos.size());
-
+    caminhosValidos.reserve(caminhosRelativos.size());
     for (const auto& relPath : caminhosRelativos)
     {
-        sem.acquire();
         std::string caminhoCompleto = pastaRaiz + "\\" + relPath;
-        if (caminhoCompleto.find(launcherName))
+        std::string caminhoLower = caminhoCompleto;
+        std::transform(caminhoLower.begin(), caminhoLower.end(), caminhoLower.begin(), [](unsigned char c){ return std::tolower(c); });
+        if (caminhoLower.find(launcherName) != std::string::npos)
             continue;
-        futuros.emplace_back(std::async(std::launch::async, [caminhoCompleto, relPath, &sem]() {
+        sem.acquire();
+        caminhosValidos.push_back(relPath);
+        futuros.emplace_back(std::async(std::launch::async, [caminhoCompleto, &sem]() 
+		{
             auto md5 = createMD5FromFile(caminhoCompleto);
-            std::cout << relPath << " - " << md5 << std::endl;
+            std::cout << caminhoCompleto << " - " << md5 << std::endl;
             sem.release();
             return md5;
         }));
     }
-
     std::vector<Arquivo> arquivos;
-    arquivos.reserve(caminhosRelativos.size());
+    arquivos.reserve(caminhosValidos.size());
     int fileID = 1;
-
-    for (size_t i = 0; i < caminhosRelativos.size(); ++i)
+    for (size_t i = 0; i < caminhosValidos.size(); ++i)
     {
         std::string md5 = futuros[i].get();
         arquivos.emplace_back(Arquivo{
             fileID++,
             md5,
-            caminhosRelativos[i],
+            caminhosValidos[i],
             false
         });
     }
-
     json jArray = json::array();
     for (const auto& arq : arquivos)
     {
@@ -116,10 +115,8 @@ void gerarFileListJSON(const std::string& pastaRaiz) noexcept
             {"ToUpdate", arq.ToUpdate}
         });
     }
-
     if (std::ofstream outFile("filelist.json"); outFile)
         outFile << jArray.dump(4);
-
     if (std::ofstream outLauncher("launcher.txt"); outLauncher)
         outLauncher << createMD5FromFile("Update\\Splash.exe");
 }
@@ -128,4 +125,5 @@ int main()
 {
     gerarFileListJSON("Update");
     return 0;
+
 }
