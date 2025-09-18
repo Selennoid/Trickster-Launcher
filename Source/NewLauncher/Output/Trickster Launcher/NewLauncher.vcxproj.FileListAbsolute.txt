@@ -1,2 +1,3 @@
 C:\Users\BCG\Desktop\Trickster Launcher\Output\Trickster Launcher\WebView2Loader.dll
 C:\Users\BCG\Documents\GitHub\Trickster-Launcher\Output\Trickster Launcher\WebView2Loader.dll
+C:\Users\Selene\Documents\GitHub\Trickster-Launcher\Output\Trickster Launcher\WebView2Loader.dll

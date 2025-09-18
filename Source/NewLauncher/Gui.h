@@ -35,7 +35,7 @@ namespace gui
 	constexpr int WIDTH = 538;
 	constexpr int HEIGHT = 564;
 	extern bool isRunning, isVerifying;
-	extern bool check_l, option_l, exit_l, game_l;
+	extern bool check_l, option_l, exit_l, game_l, check_f;
 	extern HWND window, web;
 	extern WNDCLASSEX windowClass;
 	extern POINTS position;
@@ -46,6 +46,7 @@ namespace gui
 	extern LPDIRECT3DTEXTURE9 option_n, option_h, option_s, option_g;
 	extern LPDIRECT3DTEXTURE9 exit_n, exit_h, exit_s;
 	extern LPDIRECT3DTEXTURE9 game_n, game_h, game_s, game_g;
+	extern LPDIRECT3DTEXTURE9 check_n, check_h, check_s, check_g;
 	extern std::atomic<float> g_iFileProgress, g_iTotalProgress;
 	extern std::mutex g_FileStringMutex;
 	extern std::string g_FileString;

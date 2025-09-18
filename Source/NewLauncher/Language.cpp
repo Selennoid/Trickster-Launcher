@@ -16,7 +16,8 @@ namespace lang
         {"launcher_site_click",          "CLICKING HERE"},
         {"launcher_update_launch_fail",  "Failed to launch the updated launcher."},
 		{"launcher_update_download_fail","Failed to download the updated launcher."},
-	    {"launcher_update_check_fail",   "Failed to check for launcher updates."}
+	    {"launcher_update_check_fail",   "Failed to check for launcher updates."},
+        {"launcher_filelist_building",   "Creating update list..."},
     };
 }
 

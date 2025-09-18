@@ -5,7 +5,7 @@ namespace config
 {
 	std::wstring WindowTitle	= L"Trickster Launcher";	  // Window title in the TaskBar
 	std::string SubTitle	    = "Trickster Launcher";		 // text that appears at the top of the launcher
-	std::string LauncherCDN		= "cdn.cora-to.com";		// Your launcher website, without http or https
+	std::string LauncherCDN		= "cdn.selenoid.com.br";		// Your launcher website, without http or https
 	std::wstring BaseNewsURL	= L"https://google.com.br";// Link to your news page
 	std::string WebsiteLink		= "https://google.com";	  // Link to your website
 	std::string OptionExecName  = "Setup.exe";			 // Name of the Options executable

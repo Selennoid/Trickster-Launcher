@@ -33,7 +33,8 @@ namespace gui
 	LPDIRECT3DTEXTURE9 option_n = nullptr, option_h = nullptr, option_s = nullptr, option_g = nullptr;
 	LPDIRECT3DTEXTURE9 exit_n = nullptr, exit_h = nullptr, exit_s = nullptr;
 	LPDIRECT3DTEXTURE9 game_n = nullptr, game_h = nullptr, game_s = nullptr, game_g = nullptr;
-	bool check_l = true, option_l = true, exit_l = false, game_l = true;
+	LPDIRECT3DTEXTURE9 check_n = nullptr, check_h = nullptr, check_s = nullptr, check_g = nullptr;
+	bool check_l = true, option_l = true, exit_l = false, game_l = true, check_f = false;
 	bool isRunning = true, isVerifying = false;
 	HWND window = nullptr;
 	HWND web = nullptr;
@@ -201,7 +202,12 @@ void gui::LoadResources() noexcept
 	game_n = gameTex.color; 
 	game_g = gameTex.gray; 
 	game_h = LoadTextureFromResource(windowClass.hInstance, GAME_H, 118, 61); 
-	game_s = LoadTextureFromResource(windowClass.hInstance, GAME_S, 118, 61); 
+	game_s = LoadTextureFromResource(windowClass.hInstance, GAME_S, 118, 61);
+	TexturePair checkTex = LoadTexturePairFromResource(windowClass.hInstance, CHECK_N, 113, 27);
+	check_n = checkTex.color;
+	check_g = checkTex.gray;
+	check_h = LoadTextureFromResource(windowClass.hInstance, CHECK_H, 113, 27);
+	check_s = LoadTextureFromResource(windowClass.hInstance, CHECK_S, 113, 27);
 }
 
 void gui::CreateHWindow( const WCHAR* windowName ) noexcept
@@ -348,7 +354,7 @@ void gui::CreateImGui() noexcept
 	if (helper == nullptr)
 	{
 		helper = new Helper();
-		maintenanceCheck = helper->GetFileFromURL(1);
+		maintenanceCheck = helper->GetFileFromURL(0);
 	}
 	if (maintenanceCheck == "")
 	{
@@ -519,10 +525,21 @@ void gui::Render() noexcept
 		ImGui::Text("%s", lang::GetString("launcher_site_desc").c_str());
 		ImGui::SetCursorPos(ImVec2((winSize.x - 328), (winSize.y - 60)));
 		RenderLink(lang::GetString("launcher_site_click").c_str(), config::WebsiteLink.c_str());
+		ImGui::SetCursorPos(ImVec2(23, winSize.y - 132));
+		if (TricksterImageButton(lang::GetString("launcher_check").c_str(), (ImTextureID)check_n, (ImTextureID)check_h, (ImTextureID)check_s, (ImTextureID)check_g, ImVec2(113, 27), check_l))
+		{
+			if (!check_l)
+			{
+				isVerifying = false;
+				check_f = true;
+				helper->isWorkerDone = false;
+			}
+		}
 		ImGui::SetCursorPos(ImVec2(150, winSize.y - 132));
 		if (TricksterImageButton(lang::GetString("launcher_options").c_str(), (ImTextureID)option_n, (ImTextureID)option_h, (ImTextureID)option_s, (ImTextureID)option_g, ImVec2(113, 27), option_l))
 		{
-			system(config::OptionExecName.c_str());
+			if (!option_l)
+				system(config::OptionExecName.c_str());
 		}
 		ImGui::SetCursorPos(ImVec2(274, winSize.y - 132));
 		if (TricksterImageButton(lang::GetString("launcher_exit").c_str(), (ImTextureID)exit_n, (ImTextureID)exit_h, (ImTextureID)exit_s, (ImTextureID)exit_s, ImVec2(113, 27), exit_l))
@@ -542,10 +559,16 @@ void gui::Render() noexcept
 			if (!helper->isMaintenance)
 				game_l = false;
 		}
+		else
+		{
+			check_l = true;
+			option_l = true;
+			game_l = true;
+		}
 		if (!isVerifying)
 		{
 			helper->UpdateLauncher();
-			helper->CheckWorker();
+			helper->CheckWorker(check_f);
 			isVerifying = true;
 		}
 		ImGui::End();
