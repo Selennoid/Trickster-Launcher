@@ -22,7 +22,7 @@ https://github.com/user-attachments/assets/1ee4a782-afbc-4f08-845f-88c6b3453b9b
 ## How can i configure it in my host?
 Your update folder root should be like this:
 
-<img width="762" height="167" alt="1756963308867- RaGEZONE" src="https://i.imgur.com/Hp0OfO6.png" />
+<img alt="1756963308867- RaGEZONE" src="https://i.imgur.com/Hp0OfO6.png" />
 
 Inside the Update folder, you put files like you would in your trickster client, **same folder structure and everything INCLUDING THE SPLASH.EXE!**
 then you just run the **FileListGen.exe** and it is done!
