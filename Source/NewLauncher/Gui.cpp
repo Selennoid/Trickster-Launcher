@@ -542,7 +542,7 @@ void gui::Render() noexcept
 			{
 				STARTUPINFOA si = { sizeof(si) };
 				PROCESS_INFORMATION pi;
-				std::filesystem::path gameExe = helper->GetGamePath() / "Setup.exe";
+				std::filesystem::path gameExe = helper->GetGamePath() / config::OptionExecName.c_str();
 				std::string exePath = gameExe.string();
 				if (!CreateProcessA(exePath.c_str(), nullptr, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
 					MessageBoxA(NULL, lang::GetString("launcher_setup_fail").c_str(), "Error!", MB_OK);
