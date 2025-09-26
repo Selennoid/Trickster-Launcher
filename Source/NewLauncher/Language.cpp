@@ -18,6 +18,8 @@ namespace lang
 		{"launcher_update_download_fail","Failed to download the updated launcher."},
 	    {"launcher_update_check_fail",   "Failed to check for launcher updates."},
         {"launcher_filelist_building",   "Creating update list..."},
+        {"launcher_setup_fail",          "Failed to open trickster settings!"},
+        {"launcher_copy_fail",           "Failed to open the launcher!"},
     };
 }
 

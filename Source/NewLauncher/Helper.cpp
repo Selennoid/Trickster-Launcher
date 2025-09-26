@@ -309,21 +309,21 @@ bool Helper::InjectDLL(HANDLE hProcess, const std::string& dllPath)
     return true;
 }
 
-std::string Helper::GetGameExePath()
+std::filesystem::path Helper::GetGamePath()
 {
     char buffer[MAX_PATH];
     GetModuleFileNameA(nullptr, buffer, MAX_PATH);
     std::filesystem::path exePath(buffer);
     std::filesystem::path dir = exePath.parent_path();
-    std::filesystem::path gameExe = dir / "Trickster.exe";
-    return gameExe.string();
+    return dir;
 }
 
 void Helper::ClickPlayButton()
 {
     STARTUPINFOA si = { sizeof(si) };
     PROCESS_INFORMATION pi;
-    std::string exePath = GetGameExePath();
+    std::filesystem::path gameExe = GetGamePath() / "Trickster.exe";
+    std::string exePath = gameExe.string();
     if (!CreateProcessA(exePath.c_str(), nullptr, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
         return;
     if (config::IsDllInjectEnable)

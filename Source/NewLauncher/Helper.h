@@ -49,5 +49,5 @@ public:
     bool InjectDLL(HANDLE hProcess, const std::string& dllPath);
     void ClickPlayButton();
     void UpdateLauncher();
-    std::string GetGameExePath();
+    std::filesystem::path GetGamePath();
 };

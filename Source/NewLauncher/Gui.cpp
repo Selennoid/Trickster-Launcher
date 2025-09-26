@@ -539,7 +539,14 @@ void gui::Render() noexcept
 		if (TricksterImageButton(lang::GetString("launcher_options").c_str(), (ImTextureID)option_n, (ImTextureID)option_h, (ImTextureID)option_s, (ImTextureID)option_g, ImVec2(113, 27), option_l))
 		{
 			if (!option_l)
-				system(config::OptionExecName.c_str());
+			{
+				STARTUPINFOA si = { sizeof(si) };
+				PROCESS_INFORMATION pi;
+				std::filesystem::path gameExe = helper->GetGamePath() / "Setup.exe";
+				std::string exePath = gameExe.string();
+				if (!CreateProcessA(exePath.c_str(), nullptr, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
+					MessageBoxA(NULL, lang::GetString("launcher_setup_fail").c_str(), "Error!", MB_OK);
+			}
 		}
 		ImGui::SetCursorPos(ImVec2(274, winSize.y - 132));
 		if (TricksterImageButton(lang::GetString("launcher_exit").c_str(), (ImTextureID)exit_n, (ImTextureID)exit_h, (ImTextureID)exit_s, (ImTextureID)exit_s, ImVec2(113, 27), exit_l))
@@ -590,7 +597,7 @@ bool gui::copyAndRunSelf()
 		PROCESS_INFORMATION pi;
 		if (!CreateProcessA(copyExe.string().c_str(), nullptr, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi)) 
 		{
-			MessageBoxA(NULL, "Error!", "Error!", MB_OK);
+			MessageBoxA(NULL, "Error!", lang::GetString("launcher_copy_fail").c_str(), MB_OK);
 			PostQuitMessage(0);
 		}
 		CloseHandle(pi.hProcess);
