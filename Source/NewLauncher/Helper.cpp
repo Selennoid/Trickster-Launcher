@@ -351,29 +351,32 @@ void Helper::UpdateLauncher()
         MessageBoxA(NULL, lang::GetString("launcher_update_check_fail").c_str(), "Error!", MB_OK);
         PostQuitMessage(0);
     }
-    if (fileHash != remoteLauncherHash)
+    else
     {
-        if (DownloadFile(launcherName, launcherName, 1, 1))
+        if (fileHash != remoteLauncherHash)
         {
-            std::string currentExe;
-            char exePath[MAX_PATH];
-            GetModuleFileNameA(nullptr, exePath, MAX_PATH);
-            currentExe = exePath;
-            STARTUPINFOA si = { sizeof(si) };
-            PROCESS_INFORMATION pi;
-            if (!CreateProcessA(currentExe.c_str(), nullptr, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
+            if (DownloadFile(launcherName, launcherName, 1, 1))
             {
-                MessageBoxA(NULL, lang::GetString("launcher_update_launch_fail").c_str(), "Error!", MB_OK);
+                std::string currentExe;
+                char exePath[MAX_PATH];
+                GetModuleFileNameA(nullptr, exePath, MAX_PATH);
+                currentExe = exePath;
+                STARTUPINFOA si = { sizeof(si) };
+                PROCESS_INFORMATION pi;
+                if (!CreateProcessA(currentExe.c_str(), nullptr, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &pi))
+                {
+                    MessageBoxA(NULL, lang::GetString("launcher_update_launch_fail").c_str(), "Error!", MB_OK);
+                    PostQuitMessage(0);
+                }
+                CloseHandle(pi.hThread);
+                CloseHandle(pi.hProcess);
+                ExitProcess(0);
+            }
+            else
+            {
+                MessageBoxA(NULL, lang::GetString("launcher_update_download_fail").c_str(), "Error!", MB_OK);
                 PostQuitMessage(0);
             }
-            CloseHandle(pi.hThread);
-            CloseHandle(pi.hProcess);
-            ExitProcess(0);
-        }
-        else
-        {
-            MessageBoxA(NULL, lang::GetString("launcher_update_download_fail").c_str(), "Error!", MB_OK);
-            PostQuitMessage(0);
         }
     }
 }
