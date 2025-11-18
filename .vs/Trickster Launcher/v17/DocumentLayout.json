@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Helper.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|solutionrelative:Source\\NewLauncher\\Helper.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Config.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|solutionrelative:Source\\NewLauncher\\Config.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Language.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|solutionrelative:Source\\NewLauncher\\Language.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Gui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|solutionrelative:Source\\NewLauncher\\Gui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B36FF2CB-80BF-4850-BFD8-0CD56DF0422B}|Source\\NewLauncher\\NewLauncher.vcxproj|solutionrelative:Source\\NewLauncher\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,28 +31,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Helper.cpp",
-              "DocumentMoniker": "C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Helper.cpp",
-              "RelativeDocumentMoniker": "Source\\NewLauncher\\Helper.cpp",
-              "ToolTip": "C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Helper.cpp",
-              "RelativeToolTip": "Source\\NewLauncher\\Helper.cpp",
-              "ViewState": "AgIAADgBAAAAAAAAAAAkwMQAAAA3AAAAAAAAAA==",
+              "Title": "Config.cpp",
+              "DocumentMoniker": "C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Config.cpp",
+              "RelativeDocumentMoniker": "Source\\NewLauncher\\Config.cpp",
+              "ToolTip": "C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Config.cpp",
+              "RelativeToolTip": "Source\\NewLauncher\\Config.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-16T16:12:00.744Z",
+              "WhenOpened": "2025-11-18T12:04:46.726Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Main.cpp",
+              "DocumentMoniker": "C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Main.cpp",
+              "RelativeDocumentMoniker": "Source\\NewLauncher\\Main.cpp",
+              "ToolTip": "C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Main.cpp",
+              "RelativeToolTip": "Source\\NewLauncher\\Main.cpp",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAABwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-18T04:55:27.278Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Language.cpp",
+              "DocumentMoniker": "C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Language.cpp",
+              "RelativeDocumentMoniker": "Source\\NewLauncher\\Language.cpp",
+              "ToolTip": "C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Language.cpp",
+              "RelativeToolTip": "Source\\NewLauncher\\Language.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-18T04:36:39.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Gui.cpp",
               "DocumentMoniker": "C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Gui.cpp",
               "RelativeDocumentMoniker": "Source\\NewLauncher\\Gui.cpp",
               "ToolTip": "C:\\Users\\selen\\OneDrive\\Documentos\\GitHub\\Trickster-Launcher\\Source\\NewLauncher\\Gui.cpp",
               "RelativeToolTip": "Source\\NewLauncher\\Gui.cpp",
-              "ViewState": "AgIAANIBAAAAAAAAAAAAAEACAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAABQBAAAAAAAAAAAAABwBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-16T16:10:09.707Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T16:10:09.707Z"
             }
           ]
         }

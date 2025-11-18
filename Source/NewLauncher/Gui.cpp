@@ -285,7 +285,11 @@ void gui::SetupImGuiStyle() noexcept
 
 void gui::InitFonts( float baseFontSize ) noexcept
 {
-	const char* regularFontPath = "Fontes/NotoSans-Bold.ttf";
+	char windowsDir[MAX_PATH];
+	GetWindowsDirectoryA(windowsDir, MAX_PATH);
+	std::string fontPath = std::string(windowsDir) + "\\Fonts\\segoeuib.ttf";
+
+	const char* regularFontPath = fontPath.c_str();
 	ImGuiIO& io = ImGui::GetIO();
 	io.Fonts->Clear();
 	const ImWchar* glyphRanges = io.Fonts->GetGlyphRangesChineseFull();
